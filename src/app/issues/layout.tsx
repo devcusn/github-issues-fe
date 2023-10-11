@@ -1,4 +1,4 @@
-import { LayoutProps } from "@/app/issues/types";
+import { LayoutProps } from "@/src/app/issues/types";
 
 import classes from "@/app/issues/Layout.module.css";
 

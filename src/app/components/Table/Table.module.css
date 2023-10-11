@@ -1,0 +1,10 @@
+.table {
+  width: 80%;
+  border: 1px #cccccc solid;
+  border-radius: 4px;
+}
+.table_header {
+  background-color: #f6f8fa;
+  padding: 1rem;
+  border-bottom: 1px #cccccc solid;
+}
