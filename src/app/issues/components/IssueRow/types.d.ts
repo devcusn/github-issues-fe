@@ -1,3 +1,6 @@
+import { GithubIssue } from "@/services/types";
+
 export type IssueRowProps = {
-  title: string;
+  issue: GithubIssue;
+  icon: React.ReactElement;
 };
