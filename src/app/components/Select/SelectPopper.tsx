@@ -5,6 +5,7 @@ import CloseIcon from "@/assets/icons/CloseIcon";
 
 import classes from "./style.module.css";
 import { SelectPopperProps } from "./types";
+import Link from "next/link";
 
 const SelectPopper: React.FunctionComponent<SelectPopperProps> = ({
   toggleHandler,
@@ -36,6 +37,15 @@ const SelectPopper: React.FunctionComponent<SelectPopperProps> = ({
           />
         </div>
         <div className={classes.select_options}>
+          {
+            <div>
+              {
+                <Link className={classes.select_item} href="/issues" replace>
+                  remove filter
+                </Link>
+              }
+            </div>
+          }
           {filteredOptions?.map((o) => (
             <div key={o.value}>{o.title}</div>
           ))}
