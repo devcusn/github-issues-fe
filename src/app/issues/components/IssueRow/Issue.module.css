@@ -1,6 +1,10 @@
 .issue {
   display: flex;
   padding: 1rem;
+  border-top: 1px solid #cccccc;
+}
+.issue:hover {
+  background-color: #f5f8fa;
 }
 .issue_titles {
   width: 100%;
