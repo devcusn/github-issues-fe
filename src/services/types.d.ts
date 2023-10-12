@@ -100,4 +100,12 @@ export type GithubIssue = {
   performed_via_github_app: null | any; // Replace 'any' with the actual type if needed
   state_reason: null | string;
 };
+
 export type GetGithubIssueResponse = GithubIssue[];
+
+export type GithubGetIssueCommentServiceParams = {
+  issue: string;
+};
+export type GithubGetIssueDetailServiceParams = {
+  issue: string;
+};
