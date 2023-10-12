@@ -74,6 +74,7 @@ export type GithubIssue = {
   repository_url: string;
   labels_url: string;
   comments_url: string;
+  issue_url: string;
   events_url: string;
   html_url: string;
   id: number;
@@ -121,7 +122,7 @@ export type Comment = {
   created_at: string;
   updated_at: string;
   author_association: string;
-  body: string;
+  body?: string;
   reactions: GithubReactions;
   performed_via_github_app: null | any;
 };

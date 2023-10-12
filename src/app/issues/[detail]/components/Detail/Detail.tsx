@@ -3,16 +3,15 @@ import gfm from "remark-gfm";
 
 import { DetailHeaderProps } from "../DetailHeader/types";
 import classes from "./Detail.module.css";
+import SingleComment from "../DetailComments/SingleComment";
 
 const Detail: React.FunctionComponent<DetailHeaderProps> = ({
   issueDetail,
 }) => {
   return (
-    <div>
-      <ReactMarkdown className={classes.markdown} remarkPlugins={[gfm]}>
-        {issueDetail?.body}
-      </ReactMarkdown>
-    </div>
+    <>
+      <SingleComment comment={issueDetail} />
+    </>
   );
 };
 export default Detail;

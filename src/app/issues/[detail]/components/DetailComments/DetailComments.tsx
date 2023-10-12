@@ -1,15 +1,15 @@
+import SingleComment from "./SingleComment";
 import { DetailCommentsProps } from "./types";
 
 const DetailComments: React.FunctionComponent<DetailCommentsProps> = ({
   comments,
 }) => {
-  console.log(comments);
   return (
-    <div>
+    <>
       {comments.map((c) => (
-        <div key={c.id}>{c.url}</div>
+        <SingleComment key={c.id} comment={c} />
       ))}
-    </div>
+    </>
   );
 };
 export default DetailComments;
