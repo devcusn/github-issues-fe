@@ -1,0 +1,33 @@
+.detail_header  {
+  height: 100vh;
+  border-bottom: 1px rgb(31, 35, 40) solid;
+  background-color: red;
+}
+.detail_header__title {
+  display: flex;
+  align-items: center;
+}
+.detail_title {
+  font-size: 2rem;
+  color: rgb(31, 35, 40);
+  font-weight: 400;
+  word-break: break-word;
+}
+
+.detail_number {
+  font-size: 2rem;
+  color: rgb(101, 109, 118);
+  font-weight: 300;
+  word-break: break-word;
+}
+.new_issue_btn {
+  background-color: rgb(31, 136, 61);
+  color: #ffffff;
+  height: min-content;
+  min-width: max-content;
+  line-height: 18px;
+  padding: 8px;
+  font-size: 12px;
+  border-radius: 6px;
+  font-weight: 500;
+}
