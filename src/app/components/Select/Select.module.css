@@ -1,3 +1,15 @@
-.select_component {
-  display: inline-block;
+.select_compoent {
+  position: relative;
+}
+.select_component_button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.select_popper {
+  position: absolute;
+}
+
+.filter_input {
+  padding: 4px;
 }
