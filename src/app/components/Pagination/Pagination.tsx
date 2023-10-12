@@ -1,13 +1,14 @@
+import Link from "next/link";
+import { createPaginationItems } from "@/helper/pagination";
 import SinglePageItem from "./SinglePageItem";
 import classes from "./Pagination.module.css";
 import { PaginationProps } from "./types";
-import Link from "next/link";
 
 const Pagination: React.FunctionComponent<PaginationProps> = ({
   pages,
   currentPage = 1,
 }) => {
-  const renderedPageItems = Array.from({ length: pages }, (_, i) => i + 1).map(
+  const renderedPageItems = createPaginationItems(pages, currentPage).map(
     (p) => (
       <SinglePageItem
         key={`page-item${p}`}

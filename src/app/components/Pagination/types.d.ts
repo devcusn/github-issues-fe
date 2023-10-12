@@ -3,6 +3,6 @@ export type PaginationProps = {
   currentPage: number;
 };
 export type SinglePageItemProps = {
-  page: number;
+  page: number | string;
   isSelected: boolean;
 };
