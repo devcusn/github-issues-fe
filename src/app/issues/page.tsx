@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 
 const IssuesPage = async (request: NextRequest) => {
   const page = Number(request?.searchParams.page);
-
   const res = await getGithubIssues({ page });
 
   return (

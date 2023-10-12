@@ -2,6 +2,7 @@ import { DetailHeaderProps } from "./types";
 import classes from "./DetailHeader.module.css";
 import { formatDate } from "@/helper/date";
 import classNames from "classnames";
+
 const DetailHeader: React.FunctionComponent<DetailHeaderProps> = ({
   issueDetail,
 }) => {

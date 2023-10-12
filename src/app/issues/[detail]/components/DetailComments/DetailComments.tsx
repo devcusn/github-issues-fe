@@ -3,6 +3,7 @@ import { DetailCommentsProps } from "./types";
 const DetailComments: React.FunctionComponent<DetailCommentsProps> = ({
   comments,
 }) => {
+  console.log(comments);
   return (
     <div>
       {comments.map((c) => (

@@ -91,6 +91,7 @@ export type GithubIssue = {
   pull_request: PullRequest;
   created_at: string;
   updated_at: string;
+  body?: string;
   closed_at: null | string;
   author_association: string;
   active_lock_reason: null | string;

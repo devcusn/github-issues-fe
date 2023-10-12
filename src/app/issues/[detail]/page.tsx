@@ -4,8 +4,11 @@ import {
 } from "@/services/endpoints";
 import { GithubIssue } from "@/services/types";
 import classes from "./page.module.css";
+
 import DetailHeader from "./components/DetailHeader/DetailHeader";
 import DetailComments from "./components/DetailComments/DetailComments";
+import Detail from "./components/Detail/Detail";
+import DetailAddInfo from "./components/DetailAddInfo/DetailAddInfo";
 
 const IssueDetail = async ({ params }: { params: { detail: string } }) => {
   const detail = (await getGithubIssuesDetail({
@@ -17,7 +20,15 @@ const IssueDetail = async ({ params }: { params: { detail: string } }) => {
   return (
     <div className={classes.detail_page}>
       <DetailHeader issueDetail={detail} />
-      <DetailComments comments={comments} />
+      <div className="flex">
+        <div className="w-4/6">
+          <Detail issueDetail={detail} />
+          <DetailComments comments={comments} />
+        </div>
+        <div className="w-2/6">
+          <DetailAddInfo issueDetail={detail} />
+        </div>
+      </div>
     </div>
   );
 };
