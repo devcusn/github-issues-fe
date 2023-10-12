@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Home() {
+const Home = () => {
   return (
     <main className="flex min-h-screen flex-col items-center gap-20 p-24">
       <p className="text-4xl">Github Issues And Detail Page Frontend Clone</p>
@@ -28,4 +28,6 @@ export default function Home() {
       </div>
     </main>
   );
-}
+};
+
+export default Home;
