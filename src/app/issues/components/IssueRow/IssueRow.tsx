@@ -25,17 +25,14 @@ const IssueRow: React.FunctionComponent<IssueRowProps> = ({ icon, issue }) => {
           >
             {issue.title}
           </Link>
-
-          <div className={classes.issue_labels}>
-            {issue?.labels?.map((l) => (
-              <Label
-                key={l.id}
-                variant="success"
-                title={l.name}
-                color={`#${l.color}`}
-              />
-            ))}
-          </div>
+          {issue?.labels?.map((l) => (
+            <Label
+              key={l.id}
+              variant="success"
+              title={l.name}
+              color={`#${l.color}`}
+            />
+          ))}
         </div>
         <div className={classes.issue_subTitle}>{subtitle}</div>
       </div>

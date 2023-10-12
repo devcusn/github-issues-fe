@@ -9,12 +9,12 @@ const Label: React.FunctionComponent<LabelProps> = ({
   color,
 }) => {
   return (
-    <div
+    <span
       className={classNames(variant, classes.label)}
       style={{ backgroundColor: color }}
     >
       {title}
-    </div>
+    </span>
   );
 };
 export default Label;
