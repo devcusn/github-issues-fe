@@ -55,7 +55,8 @@ const IssuesTableHeader: React.FunctionComponent<IssueTableHeaderProps> = ({
             title: (
               <Link
                 className={classes.select_item}
-                href={"/issues/created_by/asm89"}
+                href={`/issues?labels=${l.name}`}
+                replace
               >
                 <span
                   style={{
