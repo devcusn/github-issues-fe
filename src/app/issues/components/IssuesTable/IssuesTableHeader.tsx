@@ -7,6 +7,7 @@ import IssueIcon from "@/assets/icons/IssueIcon";
 
 import classes from "./style.module.css";
 import { IssueTableHeaderProps } from "./types";
+import { SORT_BY } from "./constants";
 
 const IssuesTableHeader: React.FunctionComponent<IssueTableHeaderProps> = ({
   labels,
@@ -73,9 +74,24 @@ const IssuesTableHeader: React.FunctionComponent<IssueTableHeaderProps> = ({
             value: l.name,
           }))}
         />
-        {["Projects", "Milestones", "Review", "Assignee", "Sort"].map((i) => (
+        {["Projects", "Milestones", "Review", "Assignee"].map((i) => (
           <Select key={i} title={i} />
         ))}
+        <Select
+          title="Sort"
+          options={SORT_BY.map((s) => ({
+            title: (
+              <Link
+                className={classes.select_item}
+                href={`/issues?sort=${s.value}`}
+                replace
+              >
+                {s.title}
+              </Link>
+            ),
+            value: s.title,
+          }))}
+        />
       </div>
     </>
   );
