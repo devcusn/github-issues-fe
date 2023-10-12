@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import Label from "@/app/components/Label/Label";
 import MessageIcon from "@/assets/icons/MessageIcon";
@@ -15,7 +16,8 @@ const IssueRow: React.FunctionComponent<IssueRowProps> = ({ icon, issue }) => {
       <div>{icon}</div>
       <div className={classes.issue_titles}>
         <div className={classes.issue_title}>
-          {issue.title}
+          <Link href={`issues/${issue.number}`}>{issue.title}</Link>
+
           <div className={classes.issue_labels}>
             {issue?.labels?.map((l) => (
               <Label
@@ -51,10 +53,10 @@ const IssueRow: React.FunctionComponent<IssueRowProps> = ({ icon, issue }) => {
         </span>
         <span className={classes.issue_infos__info}>
           {issue.comments > 1 && (
-            <>
+            <Link href={`issues/${issue.number}`}>
               <MessageIcon />
               {issue.comments}
-            </>
+            </Link>
           )}
         </span>
       </div>
