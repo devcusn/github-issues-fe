@@ -126,3 +126,7 @@ export type Comment = {
   reactions: GithubReactions;
   performed_via_github_app: null | any;
 };
+
+export type GithubRepoDetail = {
+  open_issues_count: number;
+};

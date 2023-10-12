@@ -1,0 +1,17 @@
+.table_header__toggle {
+  display: flex;
+  gap: 1.2rem;
+  min-width: fit-content;
+}
+.table_filter {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  gap: 20px;
+  align-items: center;
+}
+.status_link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

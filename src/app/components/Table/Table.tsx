@@ -3,10 +3,10 @@ import TableContent from "./TableContent";
 import TableHeader from "./TableHeader";
 import { TableProps } from "./types";
 
-const Table: React.FunctionComponent<TableProps> = ({ content }) => {
+const Table: React.FunctionComponent<TableProps> = ({ content, header }) => {
   return (
     <div className={classes.table}>
-      <TableHeader />
+      <TableHeader>{header}</TableHeader>
       <TableContent content={content} />
     </div>
   );

@@ -1,6 +1,10 @@
 import { Metadata } from "next";
 
-import { getGithubIssues } from "@/services/endpoints";
+import {
+  getGithubIssues,
+  getGithubRepoDetail,
+  getGithupRepoAllLabels,
+} from "@/services/endpoints";
 import IssuesTable from "./components/IssuesTable/IssuesTable";
 import Pagination from "../components/Pagination/Pagination";
 import { NextRequest } from "next/server";
@@ -12,12 +16,16 @@ export const metadata: Metadata = {
 
 const IssuesPage = async (request: NextRequest) => {
   const page = Number(request?.searchParams.page);
-  const res = await getGithubIssues({ page });
-
+  const issues = await getGithubIssues({ page });
+  const repodetails = await getGithubRepoDetail();
+  const labels = await getGithupRepoAllLabels();
   return (
     <>
-      <IssuesTable data={res} />
-      <Pagination pages={45} currentPage={page} />
+      <IssuesTable data={issues} repoDetail={repodetails} labels={labels} />
+      <Pagination
+        pages={Math.ceil(Number(repodetails.open_issues_count) / 30)}
+        currentPage={page || 1}
+      />
     </>
   );
 };
