@@ -41,6 +41,33 @@ export type GithubReactions = {
   rocket: number;
   eyes: number;
 };
+export type Assignee = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string; // Note: This URL may need to be further specified based on your use case
+  gists_url: string;
+  starred_url: string; // Note: This URL may need to be further specified based on your use case
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string; // Note: This URL may need to be further specified based on your use case
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+export type PullRequest = {
+  url: string;
+  html_url: string;
+  diff_url: string;
+  patch_url: string;
+  merged_at: string | null;
+};
 
 export type GithubIssue = {
   url: string;
@@ -57,10 +84,11 @@ export type GithubIssue = {
   labels: GithubLabel[];
   state: string;
   locked: boolean;
-  assignee: null | any; // Replace 'any' with the actual type if needed
-  assignees: any[]; // Replace 'any' with the actual type if needed
+  assignee?: Assignee; // Replace 'any' with the actual type if needed
+  assignees?: Assignee[]; // Replace 'any' with the actual type if needed
   milestone: null | any; // Replace 'any' with the actual type if needed
   comments: number;
+  pull_request: PullRequest;
   created_at: string;
   updated_at: string;
   closed_at: null | string;

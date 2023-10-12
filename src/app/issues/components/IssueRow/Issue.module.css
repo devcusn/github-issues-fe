@@ -23,3 +23,26 @@
   display: flex;
   gap: 4px;
 }
+
+.issue_infos {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  text-align: right !important;
+  width: 24.99999999%;
+}
+.issue_infos__info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2px;
+  min-width: fit-content;
+  flex: 1;
+  flex-shrink: 0;
+  font-size: 14px;
+  color: #1f2328;
+}
+
+.issue_assignee_profile_image {
+  border-radius: 50%;
+}
