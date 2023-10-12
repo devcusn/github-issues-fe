@@ -1,6 +1,6 @@
 import classNames from "classnames";
 
-import classes from "./Label.module.css";
+import classes from "./style.module.css";
 import { LabelProps } from "./types";
 
 const Label: React.FunctionComponent<LabelProps> = ({

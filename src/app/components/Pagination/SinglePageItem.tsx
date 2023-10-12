@@ -2,7 +2,7 @@
 import classNames from "classnames";
 import { SinglePageItemProps } from "./types";
 
-import classes from "./Pagination.module.css";
+import classes from "./style.module.css";
 import Link from "next/link";
 
 const SinglePageItem: React.FunctionComponent<SinglePageItemProps> = ({
