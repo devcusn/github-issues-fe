@@ -29,3 +29,27 @@
   overflow-y: scroll;
   max-height: 480px;
 }
+.popper_header {
+  display: flex;
+  border-bottom: 1px rgb(216, 222, 228) solid;
+  padding: 8px;
+}
+.popper_title {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  width: 100%;
+}
+.popper_input {
+  padding: 8px;
+  border-bottom: 1px rgb(216, 222, 228) solid;
+}
+.filter_input {
+  border: 1px rgb(166, 173, 180) solid;
+  border-radius: 6px;
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  height: 32px;
+}
