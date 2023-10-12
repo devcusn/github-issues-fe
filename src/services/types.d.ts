@@ -109,3 +109,18 @@ export type GithubGetIssueCommentServiceParams = {
 export type GithubGetIssueDetailServiceParams = {
   issue: string;
 };
+
+export type Comment = {
+  url: string;
+  html_url: string;
+  issue_url: string;
+  id: number;
+  node_id: string;
+  user: GithubUser;
+  created_at: string;
+  updated_at: string;
+  author_association: string;
+  body: string;
+  reactions: GithubReactions;
+  performed_via_github_app: null | any;
+};
