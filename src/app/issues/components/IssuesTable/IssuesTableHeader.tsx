@@ -24,7 +24,13 @@ const IssuesTableHeader: React.FunctionComponent<IssueTableHeaderProps> = ({
       </div>
       <div className={classes.table_filter}>
         <Select title="Author" />
-        <Select title="Label" />
+        <Select
+          title="Label"
+          options={labels.map((l) => ({
+            title: l.name,
+            value: l.name,
+          }))}
+        />
         <Select title="Projects" />
         <Select title="Milestones" />
         <Select title="Reviews" />

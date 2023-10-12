@@ -1,0 +1,24 @@
+.select_compoent {
+  position: relative;
+}
+.select_component_button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.select_popper {
+  position: absolute;
+  border: 1px rgb(208, 215, 222) solid;
+  background-color: #ffffff;
+  padding: 4px;
+  border-radius: 6px;
+  width: 300px;
+}
+
+.filter_input {
+  padding: 8px;
+}
+.select_options {
+  overflow-y: scroll;
+  max-height: 480px;
+}
