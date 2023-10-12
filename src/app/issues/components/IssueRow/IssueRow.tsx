@@ -19,7 +19,12 @@ const IssueRow: React.FunctionComponent<IssueRowProps> = ({ icon, issue }) => {
       <div>{icon}</div>
       <div className={classes.issue_titles}>
         <div className={classes.issue_title}>
-          <Link href={`issues/${issue.number}`}>{issue.title}</Link>
+          <Link
+            className={classes.issue_title__link}
+            href={`issues/${issue.number}`}
+          >
+            {issue.title}
+          </Link>
 
           <div className={classes.issue_labels}>
             {issue?.labels?.map((l) => (
