@@ -2,7 +2,7 @@
 import { SelectProps } from "./types";
 import classes from "./Select.module.css";
 import DropDownIcon from "@/assets/icons/DropDownIcon";
-import useToggle from "@/app/hooks/useToggle";
+import useToggle from "@/hooks/useToggle";
 
 const Select: React.FunctionComponent<SelectProps> = ({ title, subTitle }) => {
   const [toggle, toggleHandler] = useToggle();

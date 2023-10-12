@@ -1,0 +1,24 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sinle_page_items {
+  display: flex;
+}
+.single_page_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 32px;
+  height: 32px;
+  border-radius: 6px;
+}
+.single_page_item__selected {
+  background-color: rgb(9, 105, 218);
+  color: #ffffff;
+}
+
+.link {
+  color: rgb(9, 105, 218);
+}
