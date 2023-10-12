@@ -1,8 +1,15 @@
 import { DetailHeaderProps } from "./types";
 import classes from "./DetailHeader.module.css";
+import { formatDate } from "@/helper/date";
+import classNames from "classnames";
 const DetailHeader: React.FunctionComponent<DetailHeaderProps> = ({
   issueDetail,
 }) => {
+  const detailInfo = `${
+    issueDetail.user.login
+  } opened this issue on ${formatDate(issueDetail.created_at)} · ${
+    issueDetail.comments
+  } comments`;
   return (
     <div className={classes.detail_header}>
       <div className={classes.detail_header__title}>
@@ -15,9 +22,11 @@ const DetailHeader: React.FunctionComponent<DetailHeaderProps> = ({
 
         <button className={classes.new_issue_btn}>New Issue</button>
       </div>
-      <div>
-        <button>Open</button>
-        <div>vahnag opened this issue on Aug 28, 2018 · 15 comments</div>
+      <div className="flex justify-items-center gap-4">
+        <button className={classNames(classes.btn, classes[issueDetail.state])}>
+          {issueDetail.state}
+        </button>
+        {detailInfo}
       </div>
     </div>
   );

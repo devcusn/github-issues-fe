@@ -29,3 +29,13 @@ export const timeAgoFormat = (dateStr: string) => {
     return "Less than 1 minute ago";
   }
 };
+
+export const formatDate = (date: string) => {
+  const originalDate = new Date(date);
+
+  return originalDate.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+};

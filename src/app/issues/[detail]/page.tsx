@@ -13,7 +13,6 @@ const IssueDetail = async ({ params }: { params: { detail: string } }) => {
   const comments = await getGithubIssuesDetailComments({
     issue: params.detail,
   });
-  console.log(comments);
   return (
     <div className={classes.detail_page}>
       <DetailHeader issueDetail={detail} />
