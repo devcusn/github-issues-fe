@@ -30,8 +30,13 @@ const IssuesTableHeader: React.FunctionComponent<IssueTableHeaderProps> = ({
           title="Author"
           options={authors.map((user) => ({
             title: (
-              <Link href={`/issues?creator=${user.login}`} replace>
+              <Link
+                className={classes.select_item}
+                href={`/issues?creator=${user.login}`}
+                replace
+              >
                 <Image
+                  className={classes.user_profile}
                   width={20}
                   height={20}
                   src={user.avatar_url}
@@ -48,7 +53,10 @@ const IssuesTableHeader: React.FunctionComponent<IssueTableHeaderProps> = ({
           title="Label"
           options={labels.map((l) => ({
             title: (
-              <Link href={"/issues/created_by/asm89"}>
+              <Link
+                className={classes.select_item}
+                href={"/issues/created_by/asm89"}
+              >
                 <span
                   style={{
                     display: "inline-block",
@@ -64,11 +72,9 @@ const IssuesTableHeader: React.FunctionComponent<IssueTableHeaderProps> = ({
             value: l.name,
           }))}
         />
-        <Select title="Projects" />
-        <Select title="Milestones" />
-        <Select title="Reviews" />
-        <Select title="Assignee" />
-        <Select title="Sort" />
+        {["Projects", "Milestones", "Review", "Assignee", "Sort"].map((i) => (
+          <Select key={i} title={i} />
+        ))}
       </div>
     </>
   );

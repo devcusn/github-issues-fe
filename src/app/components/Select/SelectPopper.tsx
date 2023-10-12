@@ -1,12 +1,20 @@
+"use client";
+import { useState } from "react";
+
 import CloseIcon from "@/assets/icons/CloseIcon";
 
 import classes from "./style.module.css";
 import { SelectPopperProps } from "./types";
+
 const SelectPopper: React.FunctionComponent<SelectPopperProps> = ({
   toggleHandler,
   title,
   options,
 }) => {
+  const [filter, setFilter] = useState<string>(null);
+  const filteredOptions = options?.filter((w) =>
+    filter ? w.value.includes(filter) : true
+  );
   return (
     <>
       <div
@@ -21,11 +29,14 @@ const SelectPopper: React.FunctionComponent<SelectPopperProps> = ({
           </button>
         </div>
         <div className={classes.popper_input}>
-          <input placeholder="Filter" className={classes.filter_input} />
+          <input
+            onChange={(e) => setFilter(e.currentTarget.value)}
+            placeholder="Filter"
+            className={classes.filter_input}
+          />
         </div>
-
         <div className={classes.select_options}>
-          {options?.map((o) => (
+          {filteredOptions?.map((o) => (
             <div key={o.value}>{o.title}</div>
           ))}
         </div>
