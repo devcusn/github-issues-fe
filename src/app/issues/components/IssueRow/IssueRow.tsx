@@ -56,7 +56,10 @@ const IssueRow: React.FunctionComponent<IssueRowProps> = ({ icon, issue }) => {
         </span>
         <span className={classes.issue_infos__info}>
           {issue.comments > 1 && (
-            <Link href={`issues/${issue.number}`}>
+            <Link
+              className={classes.issue_messages}
+              href={`issues/${issue.number}`}
+            >
               <MessageIcon />
               {issue.comments}
             </Link>
