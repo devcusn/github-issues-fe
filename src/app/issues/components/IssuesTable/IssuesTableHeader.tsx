@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+
 import Select from "@/app/components/Select/Select";
 import CheckIcon from "@/assets/icons/CheckIcon";
 import IssueIcon from "@/assets/icons/IssueIcon";
@@ -27,14 +29,38 @@ const IssuesTableHeader: React.FunctionComponent<IssueTableHeaderProps> = ({
         <Select
           title="Author"
           options={authors.map((user) => ({
-            title: user.login,
+            title: (
+              <div>
+                <Image
+                  width={20}
+                  height={20}
+                  src={user.avatar_url}
+                  alt="user"
+                />
+                {user.login}
+                {user.site_admin}
+              </div>
+            ),
             value: user.login,
           }))}
         />
         <Select
           title="Label"
           options={labels.map((l) => ({
-            title: l.name,
+            title: (
+              <div>
+                <span
+                  style={{
+                    display: "inline-block",
+                    width: "20px",
+                    height: "20px",
+                    borderRadius: "50%",
+                    backgroundColor: `#${l.color}`,
+                  }}
+                />
+                {l.name}
+              </div>
+            ),
             value: l.name,
           }))}
         />

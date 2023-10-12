@@ -3,11 +3,11 @@ import Link from "next/link";
 
 import Label from "@/app/components/Label/Label";
 import MessageIcon from "@/assets/icons/MessageIcon";
-
-import { IssueRowProps } from "./types";
-import classes from "./Issue.module.css";
 import PullRequestIcon from "@/assets/icons/PullRequestIcon";
 import { timeAgoFormat } from "@/helper/date";
+
+import classes from "./style.module.css";
+import { IssueRowProps } from "./types";
 
 const IssueRow: React.FunctionComponent<IssueRowProps> = ({ icon, issue }) => {
   const subtitle = `#${issue.number} opened ${timeAgoFormat(

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { NextRequest } from "next/server";
 
 import {
   getGithubIssues,
@@ -6,9 +7,9 @@ import {
   getGithupRepoAllAuthors,
   getGithupRepoAllLabels,
 } from "@/services/endpoints";
+
 import IssuesTable from "./components/IssuesTable/IssuesTable";
 import Pagination from "../components/Pagination/Pagination";
-import { NextRequest } from "next/server";
 
 export const metadata: Metadata = {
   title: "Issues · facebook/react",
@@ -21,6 +22,7 @@ const IssuesPage = async (request: NextRequest) => {
   const repodetails = await getGithubRepoDetail();
   const labels = await getGithupRepoAllLabels();
   const authors = await getGithupRepoAllAuthors();
+
   return (
     <>
       <IssuesTable
@@ -30,10 +32,12 @@ const IssuesPage = async (request: NextRequest) => {
         authors={authors}
       />
       <Pagination
-        pages={Math.ceil(Number(repodetails.open_issues_count) / 30)}
+        pages={Number(repodetails.open_issues_count)}
+        perPage={30}
         currentPage={page || 1}
       />
     </>
   );
 };
+
 export default IssuesPage;
