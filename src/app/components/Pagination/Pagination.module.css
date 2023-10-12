@@ -20,5 +20,8 @@
 }
 
 .link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   color: rgb(9, 105, 218);
 }

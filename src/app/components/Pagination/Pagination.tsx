@@ -3,6 +3,8 @@ import { createPaginationItems } from "@/helper/pagination";
 import SinglePageItem from "./SinglePageItem";
 import classes from "./Pagination.module.css";
 import { PaginationProps } from "./types";
+import LeftArrowIcon from "@/assets/icons/LeftArrowIcon";
+import RightArrowIcon from "@/assets/icons/RightArrowIcon";
 
 const Pagination: React.FunctionComponent<PaginationProps> = ({
   pages,
@@ -23,6 +25,7 @@ const Pagination: React.FunctionComponent<PaginationProps> = ({
         className={classes.link}
         href={`/issues?page=${currentPage === 1 ? 1 : currentPage - 1}`}
       >
+        <LeftArrowIcon />
         Previous
       </Link>
       <div className={classes.sinle_page_items}>{renderedPageItems}</div>
@@ -31,6 +34,7 @@ const Pagination: React.FunctionComponent<PaginationProps> = ({
         href={`/issues?page=${currentPage === pages ? pages : currentPage + 1}`}
       >
         Next
+        <RightArrowIcon />
       </Link>
     </div>
   );
