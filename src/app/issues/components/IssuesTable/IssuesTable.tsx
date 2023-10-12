@@ -8,6 +8,7 @@ const IssuesTable: React.FunctionComponent<IssuesTableProps> = ({
   data,
   repoDetail,
   labels,
+  authors,
 }) => {
   const renderedContent = data.map((issue) => (
     <IssueRow icon={<IssueIcon />} issue={issue} key={issue.id} />
@@ -16,7 +17,13 @@ const IssuesTable: React.FunctionComponent<IssuesTableProps> = ({
   return (
     <Table
       content={renderedContent}
-      header={<IssuesTableHeader labels={labels} repoDetail={repoDetail} />}
+      header={
+        <IssuesTableHeader
+          labels={labels}
+          repoDetail={repoDetail}
+          authors={authors}
+        />
+      }
     />
   );
 };

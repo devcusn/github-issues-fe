@@ -9,6 +9,7 @@ import { IssueTableHeaderProps } from "./types";
 const IssuesTableHeader: React.FunctionComponent<IssueTableHeaderProps> = ({
   labels,
   repoDetail,
+  authors,
 }) => {
   return (
     <>
@@ -23,7 +24,13 @@ const IssuesTableHeader: React.FunctionComponent<IssueTableHeaderProps> = ({
         </Link>
       </div>
       <div className={classes.table_filter}>
-        <Select title="Author" />
+        <Select
+          title="Author"
+          options={authors.map((user) => ({
+            title: user.login,
+            value: user.login,
+          }))}
+        />
         <Select
           title="Label"
           options={labels.map((l) => ({

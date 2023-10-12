@@ -8,3 +8,5 @@ export const GET_GITHUB_REPO_DETAIL = () =>
   "https://api.github.com/repos/facebook/react";
 export const GET_GITHUB_REPO_ALL_LABELS = () =>
   "https://api.github.com/repos/facebook/react/labels";
+export const GET_GITHUB_REPO_ALL_AUTHORS = () =>
+  `https://api.github.com/repos/facebook/react/contributors`;

@@ -20,15 +20,21 @@ const Select: React.FunctionComponent<SelectProps> = ({
         {title} <DropDownIcon />
       </button>
       {toggle && (
-        <div className={classes.select_popper}>
-          <div>{`Filter By ${title}`} close</div>
-          <input className={classes.filter_input} />
-          <div className={classes.select_options}>
-            {options?.map((o) => (
-              <div key={o.value}>{o.title}</div>
-            ))}
+        <>
+          <div
+            className={classes.select_popper__backdrop}
+            onClick={toggleHandler}
+          />
+          <div className={classes.select_popper}>
+            <div>{`Filter By ${title}`} close</div>
+            <input className={classes.filter_input} />
+            <div className={classes.select_options}>
+              {options?.map((o) => (
+                <div key={o.value}>{o.title}</div>
+              ))}
+            </div>
           </div>
-        </div>
+        </>
       )}
     </div>
   );

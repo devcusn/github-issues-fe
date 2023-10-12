@@ -2,15 +2,18 @@ import {
   GetGithubIssueResponse,
   GithubLabel,
   GithubRepoDetail,
+  GithubUser,
 } from "@/services/types";
 
 export type IssuesTableProps = {
   data: GetGithubIssueResponse;
   repoDetail: GithubRepoDetail;
-  labels: GithubLabel;
+  labels: Array<GithubLabel>;
+  authors: Array<GithubUser>;
 };
 
 export type IssueTableHeaderProps = {
   labels: Array<GithubLabel>;
+  authors: Array<GithubUser>;
   repoDetail: GithubRepoDetail;
 };

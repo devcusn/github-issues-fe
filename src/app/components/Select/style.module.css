@@ -6,6 +6,13 @@
   align-items: center;
   gap: 6px;
 }
+.select_popper__backdrop {
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+}
 .select_popper {
   position: absolute;
   border: 1px rgb(208, 215, 222) solid;

@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import {
   getGithubIssues,
   getGithubRepoDetail,
+  getGithupRepoAllAuthors,
   getGithupRepoAllLabels,
 } from "@/services/endpoints";
 import IssuesTable from "./components/IssuesTable/IssuesTable";
@@ -19,9 +20,15 @@ const IssuesPage = async (request: NextRequest) => {
   const issues = await getGithubIssues({ page });
   const repodetails = await getGithubRepoDetail();
   const labels = await getGithupRepoAllLabels();
+  const authors = await getGithupRepoAllAuthors();
   return (
     <>
-      <IssuesTable data={issues} repoDetail={repodetails} labels={labels} />
+      <IssuesTable
+        data={issues}
+        repoDetail={repodetails}
+        labels={labels}
+        authors={authors}
+      />
       <Pagination
         pages={Math.ceil(Number(repodetails.open_issues_count) / 30)}
         currentPage={page || 1}
