@@ -1,0 +1,11 @@
+.label {
+  display: inline-block;
+  height: fit-content;
+  font-size: 12px;
+  line-height: 18px;
+  border-radius: 2em;
+  font-weight: 500;
+  padding: 0 7px;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}

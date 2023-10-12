@@ -7,6 +7,9 @@
   padding-left: 0.5rem;
 }
 .issue_title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   font-size: 1rem;
   color: #1f2328;
   font-weight: 600;
@@ -14,4 +17,9 @@
 .issue_subTitle {
   font-size: 0.75rem;
   color: #656d76;
+}
+
+.issue_labels {
+  display: flex;
+  gap: 4px;
 }
