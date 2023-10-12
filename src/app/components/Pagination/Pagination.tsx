@@ -29,6 +29,7 @@ const Pagination: React.FunctionComponent<PaginationProps> = ({
       <Link
         className={classes.link}
         href={`/issues?page=${currentPage === 1 ? 1 : currentPage - 1}`}
+        replace={true}
       >
         <LeftArrowIcon />
         Previous
@@ -37,6 +38,7 @@ const Pagination: React.FunctionComponent<PaginationProps> = ({
       <Link
         className={classes.link}
         href={`/issues?page=${currentPage === pages ? pages : currentPage + 1}`}
+        replace={true}
       >
         Next
         <RightArrowIcon />

@@ -7,6 +7,7 @@ import {
   getGithupRepoAllAuthors,
   getGithupRepoAllLabels,
 } from "@/services/endpoints";
+import { objectToQueryString } from "@/helper/query";
 
 import IssuesTable from "./components/IssuesTable/IssuesTable";
 import Pagination from "../components/Pagination/Pagination";
@@ -17,8 +18,11 @@ export const metadata: Metadata = {
 };
 
 const IssuesPage = async (request: NextRequest) => {
-  const page = Number(request?.searchParams.page);
-  const issues = await getGithubIssues({ page });
+  const page = Number(request.searchParams.page) || 1;
+  const name = request.searchParams.creator;
+  const issues = await getGithubIssues(
+    objectToQueryString(request?.searchParams)
+  );
   const repodetails = await getGithubRepoDetail();
   const labels = await getGithupRepoAllLabels();
   const authors = await getGithupRepoAllAuthors();
@@ -31,11 +35,13 @@ const IssuesPage = async (request: NextRequest) => {
         labels={labels}
         authors={authors}
       />
-      <Pagination
-        pages={Number(repodetails.open_issues_count)}
-        perPage={30}
-        currentPage={page || 1}
-      />
+      {!name && (
+        <Pagination
+          pages={Number(repodetails.open_issues_count)}
+          perPage={30}
+          currentPage={page || 1}
+        />
+      )}
     </>
   );
 };

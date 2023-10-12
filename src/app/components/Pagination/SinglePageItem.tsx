@@ -9,10 +9,11 @@ const SinglePageItem: React.FunctionComponent<SinglePageItemProps> = ({
   page,
   isSelected,
 }) => {
-  const link = typeof page === "string" ? "" : `issues?page=${page}`;
+  const link = typeof page === "string" ? "" : `/issues?page=${page}`;
   return (
     <Link
       href={link}
+      replace={true}
       className={classNames(classes.single_page_item, {
         [classes.single_page_item__selected]: isSelected,
       })}

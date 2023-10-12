@@ -30,7 +30,7 @@ const IssuesTableHeader: React.FunctionComponent<IssueTableHeaderProps> = ({
           title="Author"
           options={authors.map((user) => ({
             title: (
-              <div>
+              <Link href={`/issues?creator=${user.login}`} replace>
                 <Image
                   width={20}
                   height={20}
@@ -39,7 +39,7 @@ const IssuesTableHeader: React.FunctionComponent<IssueTableHeaderProps> = ({
                 />
                 {user.login}
                 {user.site_admin}
-              </div>
+              </Link>
             ),
             value: user.login,
           }))}
@@ -48,7 +48,7 @@ const IssuesTableHeader: React.FunctionComponent<IssueTableHeaderProps> = ({
           title="Label"
           options={labels.map((l) => ({
             title: (
-              <div>
+              <Link href={"/issues/created_by/asm89"}>
                 <span
                   style={{
                     display: "inline-block",
@@ -59,7 +59,7 @@ const IssuesTableHeader: React.FunctionComponent<IssueTableHeaderProps> = ({
                   }}
                 />
                 {l.name}
-              </div>
+              </Link>
             ),
             value: l.name,
           }))}

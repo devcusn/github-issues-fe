@@ -1,8 +1,10 @@
 import Table from "@/app/components/Table/Table";
-import { IssuesTableProps } from "./types";
-import IssueRow from "../IssueRow/IssueRow";
+import NotFound from "@/app/components/NotFound/NotFound";
 import IssueIcon from "@/assets/icons/IssueIcon";
+
+import IssueRow from "../IssueRow/IssueRow";
 import IssuesTableHeader from "./IssuesTableHeader";
+import { IssuesTableProps } from "./types";
 
 const IssuesTable: React.FunctionComponent<IssuesTableProps> = ({
   data,
@@ -10,9 +12,14 @@ const IssuesTable: React.FunctionComponent<IssuesTableProps> = ({
   labels,
   authors,
 }) => {
-  const renderedContent = data.map((issue) => (
-    <IssueRow icon={<IssueIcon />} issue={issue} key={issue.id} />
-  ));
+  const renderedContent =
+    data.length > 0 ? (
+      data?.map((issue) => (
+        <IssueRow icon={<IssueIcon />} issue={issue} key={issue.id} />
+      ))
+    ) : (
+      <NotFound />
+    );
 
   return (
     <Table

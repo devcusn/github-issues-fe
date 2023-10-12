@@ -23,9 +23,9 @@ export const getGithubRepoDetail = async (): Promise<GithubRepoDetail> => {
     throw new Error("Failed to fetch data");
   }
 };
-export const getGithubIssues = async ({ page = 1 }) => {
+export const getGithubIssues = async (query: string) => {
   try {
-    const res = await fetch(GET_GITHUB_ISSUES(page));
+    const res = await fetch(GET_GITHUB_ISSUES(query));
     const resJson = await res.json();
     return resJson;
   } catch (err) {
