@@ -13,6 +13,8 @@
   background-color: rgb(246, 248, 250);
   padding: 20px;
   border: 1.5px rgb(208, 215, 222) solid;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
   border-bottom: none;
 }
 .single_comment__content {
@@ -21,5 +23,7 @@
 }
 .markdown {
   padding: 20px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
   border: 1.5px rgb(208, 215, 222) solid;
 }
