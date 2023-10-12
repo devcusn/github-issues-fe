@@ -7,9 +7,12 @@ import MessageIcon from "@/assets/icons/MessageIcon";
 import { IssueRowProps } from "./types";
 import classes from "./Issue.module.css";
 import PullRequestIcon from "@/assets/icons/PullRequestIcon";
+import { timeAgoFormat } from "@/helper/date";
 
 const IssueRow: React.FunctionComponent<IssueRowProps> = ({ icon, issue }) => {
-  const subtitle = `#${issue.number} opened on Sep 4 by ${issue.user.login}`;
+  const subtitle = `#${issue.number} opened ${timeAgoFormat(
+    issue.created_at
+  )} by ${issue.user.login}`;
 
   return (
     <div className={classes.issue}>

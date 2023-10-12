@@ -9,11 +9,10 @@ export const timeAgoFormat = (dateStr: string) => {
   const weeks = Math.floor(days / 7);
 
   if (weeks > 4) {
-    const lastMonth = new Date(currentDate);
-    lastMonth.setMonth(currentDate.getMonth() - 1);
-    return `Last month (${lastMonth.toLocaleString("default", {
-      month: "long",
-    })})`;
+    return `on  ${givenDate.toLocaleString("default", {
+      month: "short",
+      day: "2-digit",
+    })}`;
   } else if (weeks > 1) {
     return `${weeks} weeks ago`;
   } else if (weeks === 1) {
