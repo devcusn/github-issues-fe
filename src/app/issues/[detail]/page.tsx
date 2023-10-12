@@ -17,10 +17,11 @@ const IssueDetail = async ({ params }: { params: { detail: string } }) => {
   const comments = await getGithubIssuesDetailComments({
     issue: params.detail,
   });
+
   return (
     <div className={classes.detail_page}>
       <DetailHeader issueDetail={detail} />
-      <div className="flex">
+      <div className="flex gap-4">
         <div className="w-4/6">
           <Detail issueDetail={detail} />
           <DetailComments comments={comments} />
