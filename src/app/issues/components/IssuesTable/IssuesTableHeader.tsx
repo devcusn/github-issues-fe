@@ -8,6 +8,8 @@ import IssueIcon from "@/assets/icons/IssueIcon";
 import classes from "./style.module.css";
 import { IssueTableHeaderProps } from "./types";
 import { SORT_BY } from "./constants";
+import AuthorTitle from "./AuthorTitle";
+import LabelTitle from "./LabelTitle";
 
 const IssuesTableHeader: React.FunctionComponent<IssueTableHeaderProps> = ({
   labels,
@@ -30,44 +32,14 @@ const IssuesTableHeader: React.FunctionComponent<IssueTableHeaderProps> = ({
         <Select
           title="Author"
           options={authors.map((user) => ({
-            title: (
-              <Link
-                className={classes.select_item}
-                href={`/issues?creator=${user.login}`}
-                replace
-              >
-                <Image
-                  className={classes.user_profile}
-                  width={20}
-                  height={20}
-                  src={user.avatar_url}
-                  alt="user"
-                />
-                {user.login}
-                {user.site_admin}
-              </Link>
-            ),
+            title: <AuthorTitle user={user} />,
             value: user.login,
           }))}
         />
         <Select
           title="Label"
           options={labels.map((l) => ({
-            title: (
-              <Link
-                className={classes.select_item}
-                href={`/issues?labels=${l.name}`}
-                replace
-              >
-                <span
-                  className={classes.label}
-                  style={{
-                    backgroundColor: `#${l.color}`,
-                  }}
-                />
-                {l.name}
-              </Link>
-            ),
+            title: <LabelTitle label={l} />,
             value: l.name,
           }))}
         />

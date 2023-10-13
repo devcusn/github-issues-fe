@@ -17,3 +17,10 @@ export type IssueTableHeaderProps = {
   authors: Array<GithubUser>;
   repoDetail: GithubRepoDetail;
 };
+
+export type AutherTitleProps = {
+  user: GithubUser;
+};
+export type LabelTitleProps = {
+  label: GithubLabel;
+};
