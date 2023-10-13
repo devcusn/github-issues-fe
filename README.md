@@ -26,3 +26,24 @@ This project is a React-based clone of the GitHub Issues frontend, designed to r
 OR
 -Docker installed
 
+
+### Installation
+
+1. **Clone the repository:**
+```bash
+git clone https://github.com/devcusn/github-issues-fe.git
+```
+2. **Install Dependency**
+ ```bash
+ npm i | yarn 
+ ```
+### Installation with Docker
+ ```bash
+ npm run docker-build
+ ```
+ ```bash
+ npm run docker-run
+ ```
+
+
+   
