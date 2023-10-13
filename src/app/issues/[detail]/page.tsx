@@ -3,12 +3,12 @@ import {
   getGithubIssuesDetailComments,
 } from "@/services/endpoints";
 import { GithubIssue } from "@/services/types";
-import classes from "./page.module.css";
 
 import DetailHeader from "./components/DetailHeader/DetailHeader";
 import DetailComments from "./components/DetailComments/DetailComments";
 import Detail from "./components/Detail/Detail";
 import DetailAddInfo from "./components/DetailAddInfo/DetailAddInfo";
+import classes from "./style.module.css";
 
 const IssueDetail = async ({ params }: { params: { detail: string } }) => {
   const detail = (await getGithubIssuesDetail({
