@@ -1,6 +1,4 @@
-// helperFunctions.test.js
-
-import { objectToQueryString } from "./query"; // Update with the correct path
+import { objectToQueryString } from "./query";
 
 describe("objectToQueryString", () => {
   test("it should convert an object to a valid query string", () => {

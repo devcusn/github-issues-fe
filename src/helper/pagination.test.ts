@@ -1,6 +1,4 @@
-// pagination.test.js
-
-import { createPaginationItems } from "./pagination"; // Update with the correct path
+import { createPaginationItems } from "./pagination";
 
 describe("createPaginationItems", () => {
   test("it should return an array more than 11", () => {
