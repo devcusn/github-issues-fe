@@ -12,7 +12,7 @@ const SelectPopper: React.FunctionComponent<SelectPopperProps> = ({
   title,
   options,
 }) => {
-  const [filter, setFilter] = useState<string>(null);
+  const [filter, setFilter] = useState<string>("");
   const filteredOptions = options?.filter((w) =>
     filter ? w.value.includes(filter) : true
   );

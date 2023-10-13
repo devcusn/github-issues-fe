@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { NextRequest } from "next/server";
 
 import {
   getGithubIssues,
@@ -17,7 +16,9 @@ export const metadata: Metadata = {
   description: "...",
 };
 
-const IssuesPage = async (request: NextRequest) => {
+const IssuesPage = async (request: {
+  searchParams: { page: string; creator: string };
+}) => {
   const page = Number(request.searchParams.page) || 1;
   const name = request.searchParams.creator;
   const issues = await getGithubIssues(
