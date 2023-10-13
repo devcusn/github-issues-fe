@@ -3,9 +3,11 @@
   padding: 0.8rem;
   border-top: 1px solid #cccccc;
 }
+
 .issue:hover {
   background-color: #f5f8fa;
 }
+
 .issue_titles {
   display: flex;
   flex-direction: column;
@@ -13,6 +15,7 @@
   width: 100%;
   padding-left: 0.5rem;
 }
+
 .issue_title {
   align-items: center;
   gap: 4px;
@@ -20,6 +23,7 @@
   color: #1f2328;
   font-weight: 600;
 }
+
 .issue_subTitle {
   font-size: 0.75rem;
   color: #656d76;
@@ -32,6 +36,7 @@
   text-align: right !important;
   width: 25%;
 }
+
 .issue_infos__info {
   display: flex;
   justify-content: flex-end;
@@ -46,11 +51,13 @@
 .issue_assignee_profile_image {
   border-radius: 50%;
 }
+
 .issue_messages {
   display: flex;
   align-items: center;
   gap: 4px;
 }
+
 .issue_title__link:hover {
   color: #0a69da;
 }

@@ -1,4 +1,4 @@
-import classes from "@/app/issues/Layout.module.css";
+import classes from "./style.module.css";
 import { LayoutProps } from "./types";
 
 const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {

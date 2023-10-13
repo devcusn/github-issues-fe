@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import Label from "@/app/components/Label/Label";
 import MessageIcon from "@/assets/icons/MessageIcon";
 import PullRequestIcon from "@/assets/icons/PullRequestIcon";
 import { timeAgoFormat } from "@/helper/date";
 
 import classes from "./style.module.css";
 import { IssueRowProps } from "./types";
+import IssueRowLabels from "./IssueRowLabels";
+import IssueRowAssignes from "./IssueRowAssignes";
 
 const IssueRow: React.FunctionComponent<IssueRowProps> = ({ icon, issue }) => {
   const subtitle = `#${issue.number} opened ${timeAgoFormat(
@@ -25,14 +26,7 @@ const IssueRow: React.FunctionComponent<IssueRowProps> = ({ icon, issue }) => {
           >
             {issue.title}
           </Link>
-          {issue?.labels?.map((l) => (
-            <Label
-              key={l.id}
-              variant="success"
-              title={l.name}
-              color={`#${l.color}`}
-            />
-          ))}
+          <IssueRowLabels issue={issue} />
         </div>
         <div className={classes.issue_subTitle}>{subtitle}</div>
       </div>
@@ -45,16 +39,7 @@ const IssueRow: React.FunctionComponent<IssueRowProps> = ({ icon, issue }) => {
           )}
         </span>
         <span className={classes.issue_infos__info}>
-          {issue?.assignees?.map((a) => (
-            <Image
-              className={classes.issue_assignee_profile_image}
-              width={20}
-              height={20}
-              key={a.id}
-              src={a.avatar_url}
-              alt={"assigee profile"}
-            />
-          ))}
+          <IssueRowAssignes issue={issue} />
         </span>
         <span className={classes.issue_infos__info}>
           {issue.comments > 1 && (
