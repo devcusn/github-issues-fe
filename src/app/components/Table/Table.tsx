@@ -1,4 +1,4 @@
-import classes from "./Table.module.css";
+import classes from "./style.module.css";
 import TableContent from "./TableContent";
 import TableHeader from "./TableHeader";
 import { TableProps } from "./types";

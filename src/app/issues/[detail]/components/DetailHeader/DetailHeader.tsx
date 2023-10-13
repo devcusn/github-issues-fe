@@ -1,5 +1,5 @@
 import { DetailHeaderProps } from "./types";
-import classes from "./DetailHeader.module.css";
+import classes from "./style.module.css";
 import { formatDate } from "@/helper/date";
 import classNames from "classnames";
 
