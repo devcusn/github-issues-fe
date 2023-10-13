@@ -60,11 +60,8 @@ const IssuesTableHeader: React.FunctionComponent<IssueTableHeaderProps> = ({
                 replace
               >
                 <span
+                  className={classes.label}
                   style={{
-                    display: "inline-block",
-                    width: "20px",
-                    height: "20px",
-                    borderRadius: "50%",
                     backgroundColor: `#${l.color}`,
                   }}
                 />
