@@ -9,8 +9,17 @@ import DetailComments from "./components/DetailComments/DetailComments";
 import Detail from "./components/Detail/Detail";
 import DetailAddInfo from "./components/DetailAddInfo/DetailAddInfo";
 import classes from "./style.module.css";
+import { IssueDetailPageProps } from "./types";
 
-const IssueDetail = async ({ params }: { params: { detail: string } }) => {
+export async function generateMetadata({ params }: IssueDetailPageProps) {
+  return {
+    title: `Issue: ${params.detail}`,
+    description: "...",
+  };
+}
+const IssueDetail: React.FunctionComponent<IssueDetailPageProps> = async ({
+  params,
+}) => {
   const detail = (await getGithubIssuesDetail({
     issue: params.detail,
   })) as GithubIssue;
