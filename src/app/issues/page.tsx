@@ -10,15 +10,14 @@ import { objectToQueryString } from "@/helper/query";
 
 import IssuesTable from "./components/IssuesTable/IssuesTable";
 import Pagination from "../components/Pagination/Pagination";
+import { IssuePageProps } from "./types";
 
 export const metadata: Metadata = {
   title: "Issues · facebook/react",
   description: "...",
 };
 
-const IssuesPage = async (request: {
-  searchParams: { page: string; creator: string };
-}) => {
+const IssuesPage: React.FunctionComponent<IssuePageProps> = async (request) => {
   const page = Number(request.searchParams.page) || 1;
   const name = request.searchParams.creator;
   const issues = await getGithubIssues(
